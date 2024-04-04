@@ -24,19 +24,17 @@ export default function NavItems() {
   const router = useRouter();
 
   return (
-    <nav className=" flex gap-4 sm:gap-6">
-      <Tabs
-        variant="light"
-        onSelectionChange={(key) => {
-          router.push(key as string);
-        }}
-      >
-        <Tab key="/" title="Home" />
-        <Tab key="/projects" title="Projects" />
-        <Tab key="/about" title="About" />
-        <Tab key="/skills" title="Skills" />
-        <Tab key="/contact" title="Contact" />
-      </Tabs>
-    </nav>
+    <Tabs
+      variant="light"
+      onSelectionChange={(key) => {
+        router.push(key as string);
+      }}
+    >
+      <Tab key="/" title="Home" />
+      <Tab key="/projects" title="Projects" />
+      <Tab key="/about" title="About" />
+      <Tab key="/skills" title="Skills" />
+      <Tab key="/contact" title="Contact" />
+    </Tabs>
   );
 }

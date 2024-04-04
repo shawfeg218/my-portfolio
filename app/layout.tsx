@@ -32,11 +32,9 @@ export default function RootLayout({
       <head />
       <body className={cn("font-sans antialiased flex flex-col min-h-[100dvh]", fontSans.variable)}>
         <ProviderWrapper>
-          <main className="grow min-w-0 mx-auto max-w-7xl">
-            <Navbar />
-            {children}
-            <Footer />
-          </main>
+          <Navbar />
+          <main className="grow min-w-0 mx-auto max-w-7xl">{children}</main>
+          <Footer />
         </ProviderWrapper>
       </body>
     </html>
