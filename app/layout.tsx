@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     template: "%s | Shawn Feng",
   },
   description: "Frontend web developer.",
+  icons: {
+    icon: "/svg/SIcon.svg",
+  },
 };
 
 export default function RootLayout({
