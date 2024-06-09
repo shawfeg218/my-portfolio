@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   description: "Frontend web developer.",
   icons: {
-    icon: "/svg/SIcon.svg",
+    icon: "/svg/pyramid720.svg",
   },
 };
 
@@ -33,7 +33,9 @@ export default function RootLayout({
       <body className={cn("font-sans antialiased flex flex-col min-h-[100dvh]", fontSans.variable)}>
         <ProviderWrapper>
           <Navbar />
-          <main className="grow min-w-0 mx-auto max-w-7xl">{children}</main>
+          <main className="grow min-w-0 mx-auto max-w-7xl px-4 md:px-6 border border-red-300">
+            {children}
+          </main>
           <Footer />
         </ProviderWrapper>
       </body>

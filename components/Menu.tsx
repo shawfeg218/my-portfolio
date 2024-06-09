@@ -1,64 +1,36 @@
-import React from "react";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "./ui/sheet";
-import { Button } from "./ui/button";
-import Link from "next/link";
-import { ModeToggle } from "./theme-toggle";
+"use client";
 import { MenuIcon } from "lucide-react";
-
-const navItems = [
-  {
-    name: "Home",
-    href: "/",
-  },
-  {
-    name: "Projects",
-    href: "/projects",
-  },
-  {
-    name: "About",
-    href: "/about",
-  },
-  {
-    name: "Skills",
-    href: "/skills",
-  },
-  {
-    name: "Contact",
-    href: "/contact",
-  },
-];
+import { ModeToggle } from "./theme-toggle";
+import { Button } from "./ui/button";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
+import { navItems } from "./Navbar";
+import { Tab, Tabs } from "@nextui-org/tabs";
+import { usePathname } from "next/navigation";
+import { Divider } from "@nextui-org/divider";
 
 export default function Menu() {
+  const pathName = usePathname();
+
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" className="rounded-full" size="icon">
+        <Button variant="outline" className="rounded-lg" size="icon">
           <MenuIcon />
         </Button>
       </SheetTrigger>
 
-      <SheetContent>
-        <div className="flex flex-col divide-y-1">
+      <SheetContent className="border border-blue-400">
+        <Tabs variant="light" selectedKey={pathName} isVertical={true} fullWidth>
           {navItems.map((item) => (
-            <SheetClose asChild key={item.href}>
-              <Link key={item.href} className="py-4" href={item.href}>
-                {item.name}
-              </Link>
-            </SheetClose>
+            <Tab key={item.href} href={item.href} title={item.title} />
           ))}
+        </Tabs>
 
-          <div className="flex justify-between items-center py-2">
-            <p>Theme</p>
-            <ModeToggle />
-          </div>
+        <Divider className="my-3" />
+
+        <div className="flex justify-between items-center ">
+          <p>Theme</p>
+          <ModeToggle />
         </div>
       </SheetContent>
     </Sheet>

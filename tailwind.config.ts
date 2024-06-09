@@ -1,6 +1,6 @@
+import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
-import { nextui } from "@nextui-org/react";
 
 const config = {
   darkMode: ["class"],
@@ -9,9 +9,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-
-    // NextUI
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@nextui-org/theme/dist/components/(card|divider|tabs|ripple).js",
   ],
   prefix: "",
   theme: {
@@ -82,7 +80,27 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), nextui()],
+  plugins: [
+    require("tailwindcss-animate"),
+    nextui({
+      prefix: "nextui",
+      addCommonColors: false,
+      defaultTheme: "dark",
+      defaultExtendTheme: "dark",
+      layout: {}, // common layout tokens (applied to all themes)
+      themes: {
+        light: {
+          layout: {}, // light theme layout tokens
+          colors: {}, // light theme colors
+        },
+        dark: {
+          layout: {}, // dark theme layout tokens
+          colors: {}, // dark theme colors
+        },
+        // ... custom themes
+      },
+    }),
+  ],
 } satisfies Config;
 
 export default config;

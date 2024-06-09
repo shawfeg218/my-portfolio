@@ -3,6 +3,14 @@ import { ModeToggle } from "./theme-toggle";
 import MountainIcon from "./icons/MountainIcon";
 import NavItems from "./NavItems";
 import Menu from "./Menu";
+import PyramidIcon from "./icons/PyramidIcon";
+
+export const navItems = [
+  { key: "/", href: "/", title: "Home" },
+  { key: "/experience", href: "/experience", title: "Experience" },
+  { key: "/projects", href: "/projects", title: "Projects" },
+  { key: "/contact", href: "/contact", title: "Contact" },
+];
 
 export default function Navbar() {
   return (

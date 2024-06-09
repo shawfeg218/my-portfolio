@@ -17,8 +17,8 @@ export default function HeroSection() {
       <div>
         <TypewriterEffectSmooth words={words} className="my-3" />
         <p className="text-base tracking-wide text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-          Hello! I'm Shawn, a frontend web developer based in Taiwan. This portfolio showcases a
-          selection of my best work and projects.
+          Hello! I&apos;m Shawn, a frontend web developer based in Taiwan. This portfolio showcases
+          a selection of my best work and projects.
         </p>
       </div>
 
