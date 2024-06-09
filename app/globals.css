@@ -56,19 +56,12 @@
   body {
     @apply bg-background text-foreground;
   }
-}
 
-::-webkit-scrollbar {
-  width: 15px;
-}
+  ::-webkit-scrollbar {
+    @apply w-2.5 border-l border-l-transparent p-[1px];
+  }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #d6dee1;
-  border-radius: 50px;
-  border: 6px solid transparent;
-  background-clip: content-box;
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
 }
