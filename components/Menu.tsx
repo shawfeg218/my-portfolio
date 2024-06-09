@@ -4,25 +4,44 @@ import { ModeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
 import { navItems } from "./Navbar";
-import { Tab, Tabs } from "@nextui-org/tabs";
 import { usePathname } from "next/navigation";
 import { Divider } from "@nextui-org/divider";
+import { Tab, Tabs } from "@nextui-org/tabs";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Menu() {
   const pathName = usePathname();
 
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <Sheet>
+    <Sheet open={isOpen}>
       <SheetTrigger asChild>
-        <Button variant="outline" className="rounded-lg" size="icon">
+        <Button
+          variant="outline"
+          className="rounded-lg"
+          size="icon"
+          onClick={() => {
+            setIsOpen(true);
+          }}
+        >
           <MenuIcon />
         </Button>
       </SheetTrigger>
 
-      <SheetContent className="border border-blue-400">
-        <Tabs variant="light" selectedKey={pathName} isVertical={true} fullWidth>
+      <SheetContent className="py-10">
+        <Tabs
+          variant="light"
+          selectedKey={pathName}
+          isVertical={true}
+          fullWidth
+          onSelectionChange={() => {
+            setIsOpen(false);
+          }}
+        >
           {navItems.map((item) => (
-            <Tab key={item.href} href={item.href} title={item.title} />
+            <Tab key={item.key} title={item.title} as={Link} href={item.href} />
           ))}
         </Tabs>
 

@@ -1,8 +1,9 @@
 "use client";
-import { Tab, Tabs } from "@nextui-org/react";
-import { usePathname, useRouter } from "next/navigation";
+import { Tab, Tabs } from "@nextui-org/tabs";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { navItems } from "./Navbar";
+import Link from "next/link";
 
 export default function NavItems() {
   const pathName = usePathname();
@@ -12,9 +13,9 @@ export default function NavItems() {
   }, [pathName]);
 
   return (
-    <Tabs variant="light" selectedKey={pathName}>
+    <Tabs variant="light" selectedKey={pathName} className="dark">
       {navItems.map((item) => (
-        <Tab key={item.href} title={item.title} href={item.href} />
+        <Tab key={item.key} title={item.title} as={Link} href={item.href} />
       ))}
     </Tabs>
   );

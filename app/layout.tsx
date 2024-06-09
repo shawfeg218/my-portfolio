@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import ProviderWrapper from "@/components/provider-wrapper";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/ui/Footer";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -30,13 +31,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <head />
-      <body className={cn("font-sans antialiased flex flex-col min-h-[100dvh]", fontSans.variable)}>
+      <body className={cn("font-sans antialiased", fontSans.variable)}>
         <ProviderWrapper>
-          <Navbar />
-          <main className="grow min-w-0 mx-auto max-w-7xl px-4 md:px-6 border border-red-300">
-            {children}
-          </main>
-          <Footer />
+          <div className="flex flex-col h-screen">
+            <Navbar />
+            <ScrollArea className="flex-1">
+              <main className="min-w-0 mx-auto max-w-3xl px-6">{children}</main>
+            </ScrollArea>
+            <Footer />
+          </div>
         </ProviderWrapper>
       </body>
     </html>

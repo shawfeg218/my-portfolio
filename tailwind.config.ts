@@ -9,7 +9,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@nextui-org/theme/dist/components/(card|divider|tabs|ripple).js",
+    "./node_modules/@nextui-org/theme/dist/components/(chip|divider|tabs).js",
   ],
   prefix: "",
   theme: {
@@ -83,10 +83,9 @@ const config = {
   plugins: [
     require("tailwindcss-animate"),
     nextui({
-      prefix: "nextui",
-      addCommonColors: false,
-      defaultTheme: "dark",
-      defaultExtendTheme: "dark",
+      prefix: "nextui", // prefix for themes variables
+      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
+      defaultExtendTheme: "dark", // default theme to extend on custom themes
       layout: {}, // common layout tokens (applied to all themes)
       themes: {
         light: {

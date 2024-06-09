@@ -1,19 +1,20 @@
+import ExperienceCards from "@/components/experience/experience-card";
 import { FileText } from "lucide-react";
 
 export default function page() {
   return (
-    <div className="flex flex-col space-y-4 border border-blue-400">
+    <div className="flex flex-col space-y-4 my-6">
       {/* header */}
-      <header className="flex items-center space-x-4">
-        <FileText className="size-8 animate-pulse" />
+      <header className="flex items-center space-x-2 px-1">
+        <FileText className="size-6" />
 
-        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl lg:text-4xl">
-          Education & Experience
-        </h2>
+        <h2 className="text-2xl font-bold">Education & Experience</h2>
       </header>
 
-      <section className="border border-green-300 flex flex-col pl-[15px]">
-        <div className="flex border border-red-400 h-32"></div>
+      <section className="flex flex-col pl-[15px]">
+        <div className="border-s-2 border-muted-foreground/70">
+          <ExperienceCards />
+        </div>
       </section>
     </div>
   );

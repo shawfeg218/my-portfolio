@@ -2,21 +2,12 @@
 import { Send } from "lucide-react";
 import { Button } from "../ui/button";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
-import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
-
-const words = [
-  {
-    text: "Welcome to my portfolio!",
-    className: "text-2xl font-bold tracking-tighter sm:text-2xl xl:text-5xl",
-  },
-];
 
 export default function HeroSection() {
   return (
     <section className="grid gap-4">
       <div>
-        <TypewriterEffectSmooth words={words} className="my-3" />
-        <p className="text-base tracking-wide text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+        <p className="text-xl tracking-wide text-muted-foreground">
           Hello! I&apos;m Shawn, a frontend web developer based in Taiwan. This portfolio showcases
           a selection of my best work and projects.
         </p>
@@ -31,7 +22,7 @@ export default function HeroSection() {
           Resume
         </Button>
 
-        <a href="#contact-form">
+        <a href="/contact">
           <HoverBorderGradient
             containerClassName="rounded-full"
             as="button"
