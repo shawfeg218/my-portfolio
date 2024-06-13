@@ -3,12 +3,12 @@ import { MenuIcon } from "lucide-react";
 import { ModeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "./ui/sheet";
-import { navItems } from "./Navbar";
 import { usePathname } from "next/navigation";
 import { Divider } from "@nextui-org/divider";
 import { Tab, Tabs } from "@nextui-org/tabs";
 import Link from "next/link";
 import { useState } from "react";
+import { navItems } from "@/constants/navItems";
 
 export default function Menu() {
   const pathName = usePathname();

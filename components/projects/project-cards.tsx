@@ -1,10 +1,10 @@
 import StackChip from "@/components/StackChip";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { projectData } from "@/constants/projectData";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
-import { projectData } from "./projectData";
 
 export default function ProjectCards() {
   return (
@@ -16,6 +16,7 @@ export default function ProjectCards() {
               className="flex flex-row items-center space-x-1 group"
               href={project.link}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <CardTitle className="group-hover:underline group-hover:cursor-pointer">
                 {project.title}
@@ -38,7 +39,7 @@ export default function ProjectCards() {
           </CardContent>
 
           <CardFooter>
-            <Link href={project.link} target="_blank">
+            <Link href={project.link} target="_blank" rel="noopener noreferrer">
               <Button size="sm">
                 <FaGithub className="size-4 mr-1" />
                 GitHub

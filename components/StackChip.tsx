@@ -19,7 +19,7 @@ import mqttSvg from "@/public/svg/Mqtt.svg";
 import awsSvg from "@/public/svg/AWS.svg";
 import socketioSvg from "@/public/svg/SocketIO.svg";
 import ffmpegSvg from "@/public/svg/Ffmpeg.svg";
-import { Tool } from "./projects/projectData";
+import { Tool } from "../constants/projectData";
 
 export interface StackChipProps extends ChipProps {
   tool: Tool;

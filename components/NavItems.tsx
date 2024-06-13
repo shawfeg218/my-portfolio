@@ -1,16 +1,11 @@
 "use client";
 import { Tab, Tabs } from "@nextui-org/tabs";
 import { usePathname } from "next/navigation";
-// import { useEffect } from "react";
-import { navItems } from "./Navbar";
 import Link from "next/link";
+import { navItems } from "@/constants/navItems";
 
 export default function NavItems() {
   const pathName = usePathname();
-
-  // useEffect(() => {
-  //   console.log("pathName", pathName);
-  // }, [pathName]);
 
   return (
     <Tabs variant="light" selectedKey={pathName} className="dark">

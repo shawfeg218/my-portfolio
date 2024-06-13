@@ -8,19 +8,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { ArrowLeft } from "lucide-react";
-
-type NavItem = {
-  key: string;
-  href: string;
-  title: string;
-};
-
-export const navItems: NavItem[] = [
-  { key: "/", href: "/", title: "Home" },
-  { key: "/experience", href: "/experience", title: "Experience" },
-  { key: "/projects", href: "/projects", title: "Projects" },
-  { key: "/contact", href: "/contact", title: "Contact" },
-];
+import { navItems } from "@/constants/navItems";
 
 export default function Navbar() {
   const pathName = usePathname();

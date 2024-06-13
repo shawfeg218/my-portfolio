@@ -1,6 +1,6 @@
 import { Chip } from "@nextui-org/chip";
 import { Card, CardContent } from "../ui/card";
-import { experienceData } from "./experienceData";
+import { experienceData } from "@/constants/experienceData";
 
 export default function ExperienceCards() {
   return (
