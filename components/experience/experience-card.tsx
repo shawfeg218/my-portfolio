@@ -15,7 +15,7 @@ export default function ExperienceCards() {
 
           <CardContent className="space-y-3">
             <div className="flex items-center space-x-2">
-              <h2 className="text-lg font-semibold">{experience.place}</h2>
+              <h2 className="text-xl font-semibold">{experience.place}</h2>
 
               {experience.chip && (
                 <Chip size="sm" variant="faded">
@@ -24,7 +24,7 @@ export default function ExperienceCards() {
               )}
             </div>
 
-            <h4 className="font-semibold text-sm">{experience.title}</h4>
+            <h4 className="font-semibold text-lg">{experience.title}</h4>
 
             <p className="text-sm text-muted-foreground">{experience.description}</p>
           </CardContent>

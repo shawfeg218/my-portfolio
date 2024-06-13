@@ -1,19 +1,24 @@
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import CheckCircleIcon from "@/components/icons/CheckCircleIcon";
 import HeroSection from "@/components/main/HeroSection";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from "next/image";
+import avatarFallbackImg from "@/public/svg/pyramid720.svg";
 
 export default function Page() {
   return (
     <main className="flex flex-col space-y-4 my-6">
-      <img
-        alt="Jane Smith"
-        className="aspect-square overflow-hidden rounded-full object-cover object-center justify-self-start"
-        height="150"
-        src="/placeholder.svg"
-        width="150"
-      />
+      <Avatar className="size-32">
+        <AvatarImage src="https://github.com/shawfeg218.png" alt="@shawfeg218" />
+        <AvatarFallback>
+          <div className="size-32 rounded-full overflow-hidden relative bg-secondary/70">
+            <Image
+              className="opacity-50"
+              alt="SF"
+              src={avatarFallbackImg}
+              style={{ objectFit: "fill" }}
+            />
+          </div>
+        </AvatarFallback>
+      </Avatar>
 
       <HeroSection />
     </main>

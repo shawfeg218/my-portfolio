@@ -12,6 +12,13 @@ import tailwindcssSvg from "@/public/svg/TailwindCSS.svg";
 import reactquerySvg from "@/public/svg/ReactQuery.svg";
 import shadcnuiSvg from "@/public/svg/ShadcnUI.svg";
 import openaiSvg from "@/public/svg/OpenAi.svg";
+import azureSvg from "@/public/svg/Azure.svg";
+import firebaseSvg from "@/public/svg/Firebase.svg";
+import arduinoSvg from "@/public/svg/Arduino.svg";
+import mqttSvg from "@/public/svg/Mqtt.svg";
+import awsSvg from "@/public/svg/AWS.svg";
+import socketioSvg from "@/public/svg/SocketIO.svg";
+import ffmpegSvg from "@/public/svg/Ffmpeg.svg";
 import { Tool } from "./projects/projectData";
 
 export interface StackChipProps extends ChipProps {
@@ -21,6 +28,10 @@ export interface StackChipProps extends ChipProps {
 export default function StackChip({ tool, children, className, ...props }: StackChipProps) {
   return (
     <Chip
+      // variant="flat"
+      // color="primary"
+      variant="solid"
+      color="default"
       className={cn("rounded-lg pl-2 pr-1", className)}
       {...props}
       startContent={
@@ -59,6 +70,20 @@ export default function StackChip({ tool, children, className, ...props }: Stack
                 ? shadcnuiSvg
                 : tool === "OpenAI"
                 ? openaiSvg
+                : tool === "Azure"
+                ? azureSvg
+                : tool === "Firebase"
+                ? firebaseSvg
+                : tool === "Arduino"
+                ? arduinoSvg
+                : tool === "Mqtt"
+                ? mqttSvg
+                : tool === "AWS"
+                ? awsSvg
+                : tool === "Socket.io"
+                ? socketioSvg
+                : tool === "FFmpeg"
+                ? ffmpegSvg
                 : javascriptSvg
             }
             alt="stack svg"

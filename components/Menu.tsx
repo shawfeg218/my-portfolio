@@ -15,8 +15,12 @@ export default function Menu() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const onOpenChange = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <Sheet open={isOpen}>
+    <Sheet open={isOpen} onOpenChange={onOpenChange}>
       <SheetTrigger asChild>
         <Button
           variant="outline"

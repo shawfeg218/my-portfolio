@@ -1,7 +1,8 @@
 "use client";
-import { Send } from "lucide-react";
+import { FileText, Send } from "lucide-react";
 import { Button } from "../ui/button";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
+import ExperienceCards from "../experience/experience-card";
 
 export default function HeroSection() {
   return (

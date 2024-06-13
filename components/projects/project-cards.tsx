@@ -9,19 +9,25 @@ import { projectData } from "./projectData";
 export default function ProjectCards() {
   return (
     <>
-      {projectData.concat(projectData).map((project, i) => (
+      {projectData.map((project, i) => (
         <Card key={i} className="bg-secondary/70 max-w-2xl">
-          <CardHeader className="space-y-0 w-fit">
-            <div className="flex flex-row items-center space-y-0 space-x-1 group">
+          <CardHeader className="space-y-0 w-fit pb-3">
+            <Link
+              className="flex flex-row items-center space-x-1 group"
+              href={project.link}
+              target="_blank"
+            >
               <CardTitle className="group-hover:underline group-hover:cursor-pointer">
                 {project.title}
               </CardTitle>
 
               <ArrowRight className="hidden size-5 group-hover:cursor-pointer group-hover:block" />
-            </div>
+            </Link>
           </CardHeader>
 
           <CardContent className="space-y-2">
+            <p className="text-muted-foreground">{project.description}</p>
+
             <div className="flex flex-wrap gap-2">
               {project.tools.map((tool, i) => (
                 <StackChip key={i} tool={tool}>
@@ -29,14 +35,10 @@ export default function ProjectCards() {
                 </StackChip>
               ))}
             </div>
-
-            <p className="text-muted-foreground">
-              This is my portfolio website. It was built with Next.js and NextUI.
-            </p>
           </CardContent>
 
           <CardFooter>
-            <Link href={"/"}>
+            <Link href={project.link} target="_blank">
               <Button size="sm">
                 <FaGithub className="size-4 mr-1" />
                 GitHub
