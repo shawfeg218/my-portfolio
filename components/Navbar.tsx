@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky z-20 border-b top-0 px-6 py-3 bg-background/70 backdrop-filter backdrop-blur-lg">
-      <div className="max-w-3xl mx-auto flex items-center justify-between">
+      <div className="max-w-2xl mx-auto flex items-center justify-between">
         <Link className="hidden sm:block" href="/">
           <div className="size-10 rounded-lg overflow-hidden relative">
             <Image alt="SF" src={pyramidIcon} style={{ objectFit: "fill" }} />
@@ -34,16 +34,20 @@ export default function Navbar() {
         <div className="flex space-x-2 items-center sm:hidden">
           {pathName !== "/" ? (
             <>
-              <Button
+              {/* <Button
                 size="sm"
                 variant="ghost"
                 className="p-2"
                 onClick={() => {
                   router.back();
                 }}
-              >
-                <ArrowLeft />
-              </Button>
+              > */}
+              <ArrowLeft
+                onClick={() => {
+                  router.back();
+                }}
+              />
+              {/* </Button> */}
 
               <span className="text-lg font-semibold">
                 {navItems.find((item) => item.href === pathName)?.title}

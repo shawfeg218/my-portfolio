@@ -3,7 +3,7 @@ type Experience = {
   chip?: string;
   title: string;
   date: string;
-  description: string;
+  description: string[];
 };
 
 export const experienceData: Experience[] = [
@@ -11,15 +11,19 @@ export const experienceData: Experience[] = [
     place: "Tamkang University",
     title: "Bachelor of Information Management",
     date: "Sep, 2020 - Jun, 2024",
-    description:
-      "I am currently studying in Tamkang University, majoring in Information Management. I am a sophomore student and I am very interested in web development and programming.",
+    description: [
+      "Graduated with a Bachelor’s degree in Information Management from Tamkang University, where I honed my skills in data management and information systems.",
+      "My studies focused on blending technical knowledge with my passion for web development and programming, preparing me for a dynamic career in technology.",
+    ],
   },
   {
     place: "FanxiTech",
     chip: "On-site",
     title: "Frontend Developer",
     date: "Jan, 2024 - Jun, 2024",
-    description:
-      "I am currently working as a frontend developer in FanxiTech. I am responsible for developing the frontend of the website and I am very interested in web development and programming.",
+    description: [
+      "Frontend Developer at FanxiTech, responsible for architecting the frontend framework of a web3-integrated e-commerce webapp.",
+      "My role concentrated on utilizing Next.js for robust data fetching and creating intuitive, user-friendly interfaces, ensuring a seamless online shopping experience.",
+    ],
   },
 ];

@@ -4,8 +4,6 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import ProviderWrapper from "@/components/provider-wrapper";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/ui/Footer";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,10 +33,7 @@ export default function RootLayout({
         <ProviderWrapper>
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            {/* <ScrollArea className="flex-1"> */}
-            <main className="flex-1 min-w-0 mx-auto max-w-3xl px-6">{children}</main>
-            {/* </ScrollArea> */}
-            <Footer />
+            <main className="flex-1 min-w-0 mx-auto max-w-2xl px-6">{children}</main>
           </div>
         </ProviderWrapper>
       </body>

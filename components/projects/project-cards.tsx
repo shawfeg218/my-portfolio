@@ -2,15 +2,23 @@ import StackChip from "@/components/StackChip";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { projectData } from "@/constants/projectData";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 
-export default function ProjectCards() {
+type Props = {
+  overview?: boolean;
+};
+
+export default function ProjectCards(props: Props) {
+  const { overview } = props;
+
+  const data = overview ? projectData.slice(0, 3) : projectData;
+
   return (
     <>
-      {projectData.map((project, i) => (
-        <Card key={i} className="bg-secondary/70 max-w-2xl">
+      {data.map((project, i) => (
+        <Card key={i} className="bg-secondary/70">
           <CardHeader className="space-y-0 w-fit pb-3">
             <Link
               className="flex flex-row items-center space-x-1 group"
@@ -18,11 +26,11 @@ export default function ProjectCards() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <CardTitle className="group-hover:underline group-hover:cursor-pointer">
+              <CardTitle className="text-xl group-hover:underline group-hover:cursor-pointer">
                 {project.title}
               </CardTitle>
 
-              <ArrowRight className="hidden size-5 group-hover:cursor-pointer group-hover:block" />
+              <ArrowUpRight className="hidden size-5 group-hover:cursor-pointer group-hover:block" />
             </Link>
           </CardHeader>
 
