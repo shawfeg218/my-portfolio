@@ -9,10 +9,10 @@ type Experience = {
 export const experienceData: Experience[] = [
   {
     place: "Tamkang University",
-    title: "Bachelor of Information Management",
+    title: "Bachelor of Business Administration in Information Management",
     date: "Sep, 2020 - Jun, 2024",
     description: [
-      "Graduated with a Bachelor’s degree in Information Management from Tamkang University, where I honed my skills in data management and information systems.",
+      "Graduated with a Bachelor of Business Administration in Information Management from Tamkang University, where I honed my skills in web development and software engineering.",
       "My studies focused on blending technical knowledge with my passion for web development and programming, preparing me for a dynamic career in technology.",
     ],
   },
