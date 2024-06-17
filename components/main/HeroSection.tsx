@@ -54,16 +54,12 @@ export default function HeroSection() {
           </Link>
         ))}
 
-        <Button
-          onClick={() => {
-            console.log("hello");
-          }}
-          size="lg"
-          className="px-2"
-        >
-          <FileText className="size-6 mr-1" />
-          Resume
-        </Button>
+        <Link href="/resume.pdf" target="_blank">
+          <Button size="lg" className="px-2">
+            <FileText className="size-6 mr-1" />
+            Resume
+          </Button>
+        </Link>
 
         <Link href="mailto:shawnfeng610@gmail.com" target="_blank" rel="noopener noreferrer">
           <HoverBorderGradient
