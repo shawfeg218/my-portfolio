@@ -6,7 +6,6 @@ import Menu from "./Menu";
 import pyramidIcon from "@/public/svg/pyramid720.svg";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Button } from "./ui/button";
 import { ArrowLeft } from "lucide-react";
 import { navItems } from "@/constants/navItems";
 
@@ -34,20 +33,11 @@ export default function Navbar() {
         <div className="flex space-x-2 items-center sm:hidden">
           {pathName !== "/" ? (
             <>
-              {/* <Button
-                size="sm"
-                variant="ghost"
-                className="p-2"
-                onClick={() => {
-                  router.back();
-                }}
-              > */}
               <ArrowLeft
                 onClick={() => {
                   router.back();
                 }}
               />
-              {/* </Button> */}
 
               <span className="text-lg font-semibold">
                 {navItems.find((item) => item.href === pathName)?.title}
