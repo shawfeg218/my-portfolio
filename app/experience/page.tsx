@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import ExperienceCards from "@/components/experience/experience-cards";
 import { FileText } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Experience",
+  description: "My education and work experience",
+};
 
 export default function page() {
   return (

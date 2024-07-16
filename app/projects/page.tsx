@@ -1,5 +1,11 @@
+import type { Metadata } from "next";
 import ProjectCards from "@/components/projects/project-cards";
 import { TerminalSquareIcon } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Projects I've worked on",
+};
 
 export default function page() {
   return (
