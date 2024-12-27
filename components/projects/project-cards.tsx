@@ -20,18 +20,28 @@ export default function ProjectCards(props: Props) {
       {data.map((project, i) => (
         <Card key={i} className="bg-secondary/70">
           <CardHeader className="space-y-0 w-fit pb-3">
-            <Link
-              className="flex flex-row items-center space-x-1 group"
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <CardTitle className="text-xl group-hover:underline group-hover:cursor-pointer">
-                {project.title}
-              </CardTitle>
+            {project.github ? (
+              <Link
+                className="flex flex-row items-center space-x-1 group"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CardTitle className="text-xl group-hover:underline group-hover:cursor-pointer">
+                  {project.title}
+                </CardTitle>
 
-              <ArrowUpRight className="hidden size-5 group-hover:cursor-pointer group-hover:block" />
-            </Link>
+                <ArrowUpRight className="hidden size-5 group-hover:cursor-pointer group-hover:block" />
+              </Link>
+            ) : (
+              <Link className="flex flex-row items-center space-x-1 group" href={project.link}>
+                <CardTitle className="text-xl group-hover:underline group-hover:cursor-pointer">
+                  {project.title}
+                </CardTitle>
+
+                <ArrowUpRight className="hidden size-5 group-hover:cursor-pointer group-hover:block" />
+              </Link>
+            )}
           </CardHeader>
 
           <CardContent className="space-y-2">
