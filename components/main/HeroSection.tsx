@@ -34,13 +34,10 @@ export default function HeroSection() {
 
       <div className="space-y-2 tracking-wide">
         <h2 className="text-2xl font-bold">Shawn Feng</h2>
+        <p>MIS Engineer based in Taiwan</p>
         <p>
-          Frontend Developer based in Taiwan. Passionate about integrating design with advanced
-          technology to enhance web applications.
-        </p>
-        <p>
-          Focused on using Next.js and other cutting-edge tools to improve user experience and
-          accessibility, aiming to make the web a more inclusive and efficient space.
+          Maintain and optimize Oracle EBS to support daily operations and ensure that the system
+          effectively meets the organization&apos;s business needs.
         </p>
       </div>
 

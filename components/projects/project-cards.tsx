@@ -47,12 +47,18 @@ export default function ProjectCards(props: Props) {
           </CardContent>
 
           <CardFooter>
-            <Link href={project.link} target="_blank" rel="noopener noreferrer">
-              <Button size="sm">
-                <FaGithub className="size-4 mr-1" />
-                GitHub
-              </Button>
-            </Link>
+            {project.github ? (
+              <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                <Button size="sm">
+                  <FaGithub className="size-4 mr-1" />
+                  GitHub
+                </Button>
+              </Link>
+            ) : (
+              <Link href={project.link}>
+                <Button size="sm">Learn More</Button>
+              </Link>
+            )}
           </CardFooter>
         </Card>
       ))}

@@ -19,6 +19,8 @@ import mqttSvg from "@/public/svg/Mqtt.svg";
 import awsSvg from "@/public/svg/AWS.svg";
 import socketioSvg from "@/public/svg/SocketIO.svg";
 import ffmpegSvg from "@/public/svg/Ffmpeg.svg";
+import OracleSvg from "@/public/svg/Oracle.svg";
+import AnalysisSvg from "@/public/svg/Analysis.svg";
 import { Tool } from "../constants/projectData";
 
 export interface StackChipProps extends ChipProps {
@@ -84,6 +86,12 @@ export default function StackChip({ tool, children, className, ...props }: Stack
                 ? socketioSvg
                 : tool === "FFmpeg"
                 ? ffmpegSvg
+                : tool === "Oracle EBS"
+                ? OracleSvg
+                : tool === "Oracle APEX"
+                ? OracleSvg
+                : tool === "ERP"
+                ? AnalysisSvg
                 : javascriptSvg
             }
             alt="stack svg"
